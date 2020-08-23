@@ -25,6 +25,7 @@
     "react-table": "^7.5.0"
   },
   "devDependencies": {
+    "axios": "^0.20.0",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -33,6 +34,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
+    "fetch": "node scripts/index.js",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
