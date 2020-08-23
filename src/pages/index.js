@@ -3,6 +3,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Table from '../components/table'
+import JSONData from '../../data/releases.json'
 
 function IndexPage() {
   const columns = React.useMemo(
@@ -25,13 +26,13 @@ function IndexPage() {
       },
       {
         Header: 'Release Date',
-        accessor: 'releaseDate',
+        accessor: 'date',
       },
     ],
     []
   )
 
-  const data = []
+  const data = JSONData
 
   return (
     <Layout>
