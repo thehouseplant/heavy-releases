@@ -1,12 +1,12 @@
-import React from "react"
-import { useTable, usePagination, useSortBy } from "react-table"
-import BTable from "react-bootstrap/Table"
-import Button from "react-bootstrap/Button"
-import Pagination from "react-bootstrap/Pagination"
-import Row from "react-bootstrap/Row"
-import Col from "react-bootstrap/Col"
-import Form from "react-bootstrap/Form"
-import { BsChevronDown, BsChevronUp } from "react-icons/bs"
+import React from 'react'
+import { useTable, usePagination, useSortBy } from 'react-table'
+import BTable from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button'
+import Pagination from 'react-bootstrap/Pagination'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Form from 'react-bootstrap/Form'
+import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 
 function Table({ columns, data }) {
   const {
