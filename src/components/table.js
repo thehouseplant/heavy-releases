@@ -88,7 +88,7 @@ function Table({ columns, data }) {
 
   return (
     <>
-      <BTable striped bordered hover {...getTableProps()}>
+      <BTable responsive striped bordered hover {...getTableProps()}>
         <thead>
           {headerGroups.map(headerGroup => (
             <tr {...headerGroup.getHeaderGroupProps()}>
