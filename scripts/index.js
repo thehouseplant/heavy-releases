@@ -20,15 +20,28 @@ const { groupEnd } = require('console');
       // Loop through the releases found on each page
       for (j = 0; j < releases.data.aaData.length; j++) {
 
-        let band = releases.data.aaData[j][0];
-        let album = releases.data.aaData[j][1];
+        // Set raw response values
+        let rawBand = releases.data.aaData[j][0];
+        let rawAlbum = releases.data.aaData[j][1];
+
+        // Parse band URL and name
+        let band = parseAnchorValue(rawBand);
+        let bandUrl = rawBand.split('"');
+
+        // Parse album URL and name
+        let album = parseAnchorValue(rawAlbum);
+        let albumUrl = rawAlbum.split('"');
+
+        // Set remaining values
         let type = releases.data.aaData[j][2];
         let genre = releases.data.aaData[j][3];
         let date = releases.data.aaData[j][4];
         
         let release = {
           band: band,
+          bandUrl: bandUrl,
           album: album,
+          albumUrl: albumUrl,
           type: type,
           genre: genre,
           date: date
@@ -44,3 +57,7 @@ const { groupEnd } = require('console');
     console.log(err.response.body);
   }
 })();
+
+function parseAnchorValue(rawAnchor) {
+  return rawAnchor.match(/<a [^>]+>([^<]+)<\/a>/)[1];
+}
