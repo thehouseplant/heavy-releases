@@ -16,6 +16,9 @@ const Header = ({ siteTitle }) => (
         <Link to="/">
           <Nav.Link as="span">Home</Nav.Link>
         </Link>
+        <Link to="/contact">
+          <Nav.Link as="span">Contact</Nav.Link>
+        </Link>
       </Nav>
       <Nav>
         <Link to="https://github.com/thehouseplant/heavy-releases">
