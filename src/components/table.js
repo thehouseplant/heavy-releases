@@ -1,5 +1,6 @@
 import React from 'react'
-import { useTable, usePagination, useSortBy } from 'react-table'
+import { useTable, useFilters, usePagination, useSortBy } from 'react-table'
+import matchSorter from 'match-sorter'
 import BTable from 'react-bootstrap/Table'
 import Button from 'react-bootstrap/Button'
 import Pagination from 'react-bootstrap/Pagination'
@@ -8,7 +9,55 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import { BsChevronDown, BsChevronUp } from 'react-icons/bs'
 
+function DefaultColumnFilter({
+  column: { filterValue, preFilteredRows, setFilter },
+}) {
+  const count = preFilteredRows.length
+
+  return (
+    <input
+      value={filterValue || ''}
+      onChange={e => {
+        setFilter(e.target.value || undefined)
+      }}
+      placeholder={`Search ${count} records...`}
+    />
+  )
+}
+
+function fuzzyTextFilterFn(rows, id, filterValue) {
+  return matchSorter(rows, filterValue, { keys: [row => row.values[id]] })
+}
+
+// Let the table remove the filter if the string is empty
+fuzzyTextFilterFn.autoRemove = val => !val
+
 function Table({ columns, data }) {
+  const filterTypes = React.useMemo(
+    () => ({
+      // Add fuzzyTextFilterFn filter type
+      fuzzyText: fuzzyTextFilterFn,
+      text: (rows, id, filterValue) => {
+        return rows.filter(row => {
+          const rowValue = row.values[id]
+          return rowValue !== undefined 
+            ? String(rowValue)
+                .toLowerCase()
+                .startsWith(String(filterValue).toLowerCase())
+            : true
+        })
+      }
+    }),
+    []
+  )
+
+  const defaultColumn = React.useMemo(
+    () => ({
+      Filter: DefaultColumnFilter
+    }),
+    []
+  )
+
   const {
     getTableProps,
     getTableBodyProps,
@@ -29,7 +78,10 @@ function Table({ columns, data }) {
       columns,
       data,
       initialState: { pageIndex: 0 },
+      defaultColumn,
+      filterTypes,
     },
+    useFilters,
     useSortBy,
     usePagination,
   )
