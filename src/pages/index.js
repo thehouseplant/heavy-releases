@@ -37,7 +37,7 @@ function IndexPage() {
   return (
     <Layout>
       <SEO title="Heavy Releases" />
-      
+      <h1>Releases</h1>
       <p>
         <Table columns={columns} data={data} />
       </p>
