@@ -1,7 +1,7 @@
 import React from 'react'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import Table from '../components/table'
 import JSONData from '../../data/releases.json'
 
@@ -36,7 +36,7 @@ function IndexPage() {
 
   return (
     <Layout>
-      <SEO title="Heavy Releases" />
+      <Seo title="Heavy Releases" />
       <h1>Releases</h1>
       <p>
         <Table columns={columns} data={data} />

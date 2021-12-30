@@ -3,11 +3,11 @@ import { Button, Form } from 'react-bootstrap'
 import ReCAPTCHA from 'react-google-recaptcha'
 
 import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 
 const ContactFormPage = () => (
   <Layout>
-    <SEO title="Heavy Releases | Contact" />
+    <Seo title="Heavy Releases | Contact" />
     <h1>Contact</h1>
 
     <Form name="Contact Form" method="POST" data-netlify="true" data-netlify-recaptcha="true" action="/thank-you">
