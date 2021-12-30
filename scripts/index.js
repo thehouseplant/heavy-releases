@@ -26,11 +26,13 @@ const { groupEnd } = require('console');
 
         // Parse band URL and name
         let band = parseAnchorValue(rawBand);
-        let bandUrl = rawBand.split('"');
+        let splitBandUrl = rawBand.split('"');
+        let bandUrl = splitBandUrl[1];
 
         // Parse album URL and name
         let album = parseAnchorValue(rawAlbum);
-        let albumUrl = rawAlbum.split('"');
+        let splitAlbumUrl = rawAlbum.split('"');
+        let albumUrl = splitAlbumUrl[1];
 
         // Set remaining values
         let type = releases.data.aaData[j][2];
