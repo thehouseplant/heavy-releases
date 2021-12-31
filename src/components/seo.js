@@ -61,7 +61,19 @@ function Seo({ description, lang, meta, title }) {
           content: metaDescription,
         },
       ].concat(meta)}
-    />
+    >
+      <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"></link>
+      <style type="text/css">{`
+        button {
+          width: auto;
+          display: inline;
+          border-radius: 0;
+        }
+        footer {
+          padding: 25px;
+        }
+      `}</style>
+    </Helmet>
   )
 }
 
