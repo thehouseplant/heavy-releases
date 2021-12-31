@@ -1,10 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
-import Container from 'react-bootstrap/Container'
 
 import Header from './header'
-import './layout.scss'
+import Footer from './footer'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,9 +19,10 @@ const Layout = ({ children }) => {
   return (
     <>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <Container style={{ marginTop: '15px' }}>
+      <main className="container">
         {children}
-      </Container>
+      </main>
+      <Footer />
     </>
   )
 }
