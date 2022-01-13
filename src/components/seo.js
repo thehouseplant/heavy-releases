@@ -1,7 +1,7 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Helmet } from 'react-helmet'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { useStaticQuery, graphql } from "gatsby"
 
 function Seo({ description, lang, meta, title }) {
   const { site } = useStaticQuery(
@@ -62,7 +62,10 @@ function Seo({ description, lang, meta, title }) {
         },
       ].concat(meta)}
     >
-      <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"></link>
+      <link
+        rel="stylesheet"
+        href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css"
+      ></link>
       <style type="text/css">{`
         button {
           width: auto;
