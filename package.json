@@ -5,42 +5,13 @@
   "version": "0.1.0",
   "author": "Sean Collins <me@seancollins.io>",
   "dependencies": {
-    "gatsby": "^4.18.2",
-    "gatsby-image": "^3.11.0",
-    "gatsby-plugin-manifest": "^4.18.1",
-    "gatsby-plugin-offline": "^5.18.1",
-    "gatsby-plugin-react-helmet": "^5.18.0",
-    "gatsby-plugin-sass": "^5.18.1",
-    "gatsby-plugin-sharp": "^4.18.1",
-    "gatsby-source-filesystem": "^4.18.1",
-    "gatsby-transformer-sharp": "^4.18.1",
-    "gridjs": "^5.0.2",
-    "gridjs-react": "^5.0.2",
-    "prop-types": "^15.8.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-google-recaptcha": "^2.1.0",
-    "react-helmet": "^6.1.0",
-    "react-icons": "^4.4.0",
-    "sass": "^1.53.0"
+    "astro": "^1.0.8"
   },
-  "devDependencies": {
-    "axios": "^0.27.2",
-    "prettier": "^2.7.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "fetch": "node scripts/index.js",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "node scripts/index.js && gatsby build"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
   "repository": {
     "type": "git",
