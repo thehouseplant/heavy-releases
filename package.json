@@ -5,7 +5,8 @@
   "version": "0.1.0",
   "author": "Sean Collins <me@seancollins.io>",
   "dependencies": {
-    "astro": "^1.0.8"
+    "astro": "^1.0.8",
+    "gridjs": "^5.1.0"
   },
   "scripts": {
     "dev": "astro dev",
